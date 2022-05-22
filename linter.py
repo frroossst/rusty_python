@@ -33,9 +33,14 @@ def setup():
             json.dump(template,fobj)
             fobj.close()
 
-
-
     #git_ignore()
+
+def read_source(file):
+
+    with open(file,"r") as fobj:
+        source = fobj.read()
+
+    return source
 
 
 def after_lint(cmd):
@@ -47,21 +52,13 @@ def after_lint(cmd):
         os.system("cargo build")
 
 
-
-
-
-
-
-
-
-
-
-
 def linter():
 
     setup()
 
     settings = read_settings()
+
+    source = read_source(settings["file"])
 
     print(settings)
 
@@ -73,6 +70,8 @@ def linter():
     # Replacement lints
     for i,j in lints.items():
         print(i,"=>",j)
+        pattern = i
+        replacement = j
 
 
     after_lint(settings["after_lint"])

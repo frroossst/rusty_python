@@ -1,5 +1,6 @@
 {
     "after_lint" : "run",
     "gitignore" : false,
-    "create_new" : true
+    "create_new" : true,
+    "file" : "main.rs"
 }
