@@ -1,0 +1,26 @@
+after_lint 
+
+    set to <str> "build" or "run"
+    
+    build : builds using `cargo build` after linting
+
+    run : runs using `cargo run` after linting
+
+gitignore
+
+    set to <bool> true or false
+
+    adds the linter (and its associated filed) to .gitignore
+
+create_new
+    
+    set to <bool> true(recommended) or false
+
+    creates a new .rs file after linting, naming convention follows "default_lint.rs"
+    
+
+default_file_name
+
+    set to <str>
+
+    by default uses "main.rs"
